@@ -58,4 +58,8 @@ export class HeaderComponent {
       this.menuOpen = !this.menuOpen;
     }
   }
+
+    closeMenuIfOpen() {
+        if(this.menuOpen) this.toggleMenu();
+    }
 }

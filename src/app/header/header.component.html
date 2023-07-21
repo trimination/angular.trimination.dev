@@ -7,7 +7,7 @@
   <div class="nav-menu" id="nav-menu" #navMenu>
     <ng-container *ngFor="let url of menuUrls">
       <!-- router not needed for regular links, which are stored with http(s) prefix -->
-      <a [routerLink]="[url.url]" [ngClass]="darkMode?'dark':null" *ngIf="!url.url.startsWith('http')">{{url.name}}</a>
+      <a [routerLink]="[url.url]" [ngClass]="darkMode?'dark':null" *ngIf="!url.url.startsWith('http')" (click)="closeMenuIfOpen()">{{url.name}}</a>
       <a [href]="url.url" [ngClass]="darkMode?'dark':null" *ngIf="url.url.startsWith('http')">{{url.name}}</a>
     </ng-container>
     <div class="theme-switch">
