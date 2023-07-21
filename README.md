@@ -1,5 +1,8 @@
 # angular.trimination.dev
+A simple Angular project clone of php.trimination.dev, utilising the same 
+api.
 
+---
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
 ## Development server
