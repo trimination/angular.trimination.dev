@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import "colors";
+
+a {
+  text-decoration: none;
+  color: $text;
+}
+p {
+  font-size: 110%;
+  line-height: 1.8em;
+  margin-bottom: 30px;
+}
+ul, li {
+  padding: 10px;
+}
+body {
+  min-height: calc(100vh);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  background-color: $bg;
+  color: $text;
+}
+
+body.dark {
+  background-color: $darkBg;
+  color: $darkText;
+}
+.subtle {
+  filter: brightness(80%);
+  font-style: italic;
+  font-size: 90%;
+}
+
+._404 {
+  font-size: 1.2em;
+}
+
+.center {
+  text-align: center;
+}
+.theme-switch {
+  width: 100%;
+  text-align: center;
+  color: $darkText;
+  font-size: 1.5em;
+  padding-bottom: 10px;
+}
+.self {
+  color: $accent;
+}
+.self.dark {
+  color: $darkAccent;
+}
+
+.main-container {
+  max-width: 1200px;
+  min-height: calc(100vh - 240px);
+}
+.home-container{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  width: 100%;
+}
+.home-container h1 {
+  margin-top: 0;
+}
+#sylvanas {
+  max-width: 250px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+
+.main-container a {
+  color: $accent;
+  font-weight: 500;
+}
+.main-container.dark a {
+  color: $darkAccent;
+  font-weight: 500;
+}
+.tech-stack-wrapper {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.tech-stack-card {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.tech-stack-image {
+  width: 100px;
+  height: auto;
+}
+.post-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.in-post-image {
+  width: 100%;
+  height: auto;
+}
+.h-10px {
+  height: 10px;
+}
+.h-25px {
+  height: 25px;
+}
+.h-50px {
+  height: 50px;
+}
+.h-75px {
+  height: 75px;
+}
+.h-100px {
+  height: 100px;
+}
+.dim {
+  filter: brightness(70%);
+  transition: 1s;
+}
+.dim:hover {
+  filter: unset;
+  transition: 1s;
+}
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: $darkBg;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: $darkText;
+  padding: 10px 0 10px 0;
+  align-items: center;
+  margin-top: 150px;
+}
+.footer a {
+  color: $darkText;
+}
+.footer.dark {
+  background-color: $bg;
+  color: $text;
+}
+.footer.dark a {
+  color: $text;
+}
+video {
+  width: 100%;
+  border-radius: 10px;
+}
+.mobile-app video {
+  width: 100%;
+  height: 700px !important;
+}
+.mobile-apps-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bold {
+  font-weight: bold;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+/* Toggle Switch */
+/**
+ * https://www.w3schools.com/howto/howto_css_switch.asp
+ * modified: colors, size, position
+ *
+ **/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 4px;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background-color: $darkBg;
+}
+
+input:checked + .slider {
+  background-color: $accent;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px $accent;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* END SLIDER SWITCH */
+
+@media (min-width: 250px) {
+  .mobile-app-container {
+    gap: 50px;
+  }
+  .mobile-app {
+    flex: 0 0 100%;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tech-stack-wrapper {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 200%;
+    font-weight: normal;
+  }
+
+  .main-container {
+    text-align: center;
+    padding: 20px;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+
+  .theme-switch {
+    display: block;
+  }
+  .home-image {
+    width: 100%;
+  }
+}
+
+@media (min-width: 850px) {
+  .mobile-app {
+    flex: 0 0 calc(50% - 50px);
+    text-align: center;
+    max-width: unset;
+  }
+  .post-title {
+    font-size: 300%;
+  }
+  .tech-stack-wrapper {
+    justify-content: initial;
+  }
+  .home-image {
+    flex-basis: 28%;
+  }
+  .content, .welcome {
+    flex-basis: 60%;
+  }
+  .theme-switch {
+    display: none;
+  }
+  .main-container {
+    text-align: left;
+    margin-top: 150px;
+  }
+}

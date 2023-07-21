@@ -1,0 +1,4 @@
+/* has to be injected after load to avoid transition inconsistencies */
+body, body > *, .navigation-container, .footer {
+  transition: 300ms linear;
+}

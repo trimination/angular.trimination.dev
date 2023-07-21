@@ -1,0 +1,25 @@
+<div class="navigation-container" [ngClass]="darkMode ? 'dark':null">
+  <div class="responsive-menu-button" [ngClass]="darkMode ? 'dark' : null" (click)="toggleMenu()" #menuButton>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-menu" id="nav-menu" #navMenu>
+    <ng-container *ngFor="let url of menuUrls">
+      <!-- router not needed for regular links, which are stored with http(s) prefix -->
+      <a [routerLink]="[url.url]" [ngClass]="darkMode?'dark':null" *ngIf="!url.url.startsWith('http')">{{url.name}}</a>
+      <a [href]="url.url" [ngClass]="darkMode?'dark':null" *ngIf="url.url.startsWith('http')">{{url.name}}</a>
+    </ng-container>
+    <div class="theme-switch">
+      Dark Mode:
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round" [ngClass]="darkMode?'dark':null" (click)="toggleDarkMode()"></span>
+      </label>
+    </div>
+  </div>
+  <div class="dark-mode-toggle-container" title="toggle dark mode" [ngClass]="darkMode?'dark':null" (click)="toggleDarkMode()">
+    <img src="{{environment.assetsUrl}}/on.svg" id="dark-mode-on" [style]="!darkMode ? 'display: initial' : 'display: none'"/>
+    <img src="{{environment.assetsUrl}}/off.svg" id="dark-mode-off" [style]="darkMode ? 'display: initial' : 'display: none'"/>
+  </div>
+</div>

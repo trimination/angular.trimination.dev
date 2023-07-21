@@ -1,0 +1,39 @@
+<div class="home-container">
+  <div class="welcome">
+    <h1>{{currentPage.title}}</h1>
+    <div [innerHTML]="currentPage.content | safeHtml"></div>
+  </div>
+  <div class="home-image">
+    <img src="{{environment.assetsUrl}}/sylvanas.gif" alt="Sylvanas animated GIF" id="sylvanas"/>
+  </div>
+</div>
+<div id="tech-stack">
+  <div>
+    <h1>Tech Stack</h1>
+    <p>These are all the technologies that I am either currently using or am comfortable using</p>
+    <ng-container *ngFor="let dir of stackImageDirs">
+      <h2>{{dir | friendlyDirName}} Technologies</h2>
+      <div class="tech-stack-wrapper">
+        <ng-container *ngFor="let img of stackImageData[dir]">
+          <div class="tech-stack-card">
+            <div class="content">
+              <div class="front toggleable">
+                <img src="{{environment.assetsUrl}}/logos/{{dir}}/{{img}}"
+                     class="tech-stack-image"
+                     loading="lazy"/>
+              </div>
+              <div class="back toggleable">
+            <span
+              class="tech-stack-card-text">{{img | friendlyFileName}}</span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <br/>
+      <br/>
+    </ng-container>
+    <br/>
+    <br/>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="post-container">
+  <ng-container *ngIf="currentPage; else nodata">
+
+    <h1 class="post-title">{{currentPage.title}}</h1>
+    <div class="post-content" [innerHTML]="currentPage.content | safeHtml">
+    </div>
+
+  </ng-container>
+  <ng-template #nodata>
+    <app-not-found></app-not-found>
+  </ng-template>
+</div>
